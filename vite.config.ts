@@ -9,36 +9,44 @@ import cdn from 'vite-plugin-cdn-import'
 
 import { external, globals, modules } from './cdn.modules'
 
-const isVisualizer = process.argv.includes('--visualizer')
-const isProd = process.env.NODE_ENV === 'production'
-
-console.log('>>>>>> isProd: ', { isProd, external, globals })
-
 // https://vite.dev/config/
-export default defineConfig({
-  plugins: [
-    react(),
-    tailwindcss(),
-    isVisualizer && visualizer({ open: true }),
-    isProd &&
-      cdn({
-        modules
-      })
-  ].filter(Boolean),
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, './src')
+export default defineConfig((env) => {
+  const isVisualizer = process.argv.includes('--visualizer')
+  const isProd = env.mode === 'production'
+  const timestamp = Date.now()
+
+  return {
+    plugins: [
+      react(),
+      tailwindcss(),
+      isVisualizer && visualizer({ open: true }),
+      isProd &&
+        cdn({
+          modules
+        })
+    ].filter(Boolean),
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, './src')
+      }
+    },
+    define: {
+      __BUILD_TIME__: JSON.stringify(timestamp)
+    },
+    server: {
+      port: 2888
+    },
+    build: {
+      sourcemap: true,
+      rollupOptions: isProd
+        ? {
+            external,
+            plugins: [externalGlobals(globals)]
+          }
+        : {}
+    },
+    esbuild: {
+      drop: isProd ? ['console', 'debugger'] : undefined // 删除所有 console 和 debugger
     }
-  },
-  server: {
-    port: 2888
-  },
-  build: {
-    rollupOptions: isProd
-      ? {
-          external,
-          plugins: [externalGlobals(globals)]
-        }
-      : {}
   }
 })
