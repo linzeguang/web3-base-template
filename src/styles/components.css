@@ -1,0 +1,14 @@
+@import 'tailwindcss';
+
+@layer utilities {
+  .input {
+    @apply bg-neutral transition-all;
+    @apply focus:border-primary focus-within:border-primary;
+    @apply focus:shadow-primary/50 focus:shadow-[0_0_32px_0];
+    @apply focus-within:shadow-primary/50 focus-within:shadow-[0_0_32px_0];
+    @apply focus-within:outline-0 focus:outline-0;
+  }
+  .button {
+    @apply backdrop-blur-md;
+  }
+}

@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
+
+@theme {
+  --font-Unbounded: Unbounded, 'sans-serif';
+  --font-Exo2: Exo2, 'sans-serif';
+}

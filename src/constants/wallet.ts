@@ -13,7 +13,7 @@ if (!projectId) {
 export const metadata: CreateAppKit['metadata'] = {
   name: 'AppKit',
   description: 'AppKit Example',
-  url: 'https://reown.com', // origin must match your domain & subdomain
+  url: location.origin, // origin must match your domain & subdomain
   icons: ['https://avatars.githubusercontent.com/u/179229932']
 }
 

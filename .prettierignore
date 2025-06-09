@@ -1,6 +1,3 @@
 .cache
 public
 node_modules
-
-# Ignore shadcn 
-src/components/ui/*
