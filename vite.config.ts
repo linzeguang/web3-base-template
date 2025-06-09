@@ -6,6 +6,7 @@ import externalGlobals from 'rollup-plugin-external-globals'
 import { visualizer } from 'rollup-plugin-visualizer'
 import { defineConfig } from 'vite'
 import cdn from 'vite-plugin-cdn-import'
+import svgr from 'vite-plugin-svgr'
 
 import { external, globals, modules } from './cdn.modules'
 
@@ -19,6 +20,7 @@ export default defineConfig((env) => {
     plugins: [
       react(),
       tailwindcss(),
+      svgr(),
       isVisualizer && visualizer({ open: true }),
       isProd &&
         cdn({

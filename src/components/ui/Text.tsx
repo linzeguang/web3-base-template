@@ -5,8 +5,18 @@ import { cva, type VariantProps } from 'class-variance-authority'
 import { cn } from '@/lib/utils'
 
 const textVariants = cva('', {
-  variants: {},
-  defaultVariants: {}
+  variants: {
+    variant: {
+      primary: 'text-white',
+      secondary: 'text-white/80',
+      tertiary: 'text-white/60',
+      disabled: 'text-[#A4A4A4]',
+      gray: 'text-[#BBBBBB ]'
+    }
+  },
+  defaultVariants: {
+    variant: 'primary'
+  }
 })
 
 export interface TextProps extends React.HTMLAttributes<HTMLElement>, VariantProps<typeof textVariants> {
@@ -14,8 +24,8 @@ export interface TextProps extends React.HTMLAttributes<HTMLElement>, VariantPro
 }
 
 export const Text = React.forwardRef<React.HTMLAttributes<HTMLElement>, TextProps>(
-  ({ as: Component = 'p', className, ...rest }, ref) => (
-    <Component ref={ref} className={textVariants({ className })} {...rest} />
+  ({ as: Component = 'p', className, variant, ...rest }, ref) => (
+    <Component ref={ref} className={textVariants({ className, variant })} {...rest} />
   )
 )
 

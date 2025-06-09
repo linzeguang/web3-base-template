@@ -11,4 +11,12 @@
   .button {
     @apply backdrop-blur-md;
   }
+  .dialog-overlay {
+    @apply fixed top-0 right-0 bottom-0 left-0 z-[998];
+    @apply bg-black/20 backdrop-blur-md;
+  }
+  .dialog-content {
+    @apply fixed top-1/2 left-1/2 z-[999] -translate-1/2;
+    @apply border-base-300 rounded-md border bg-[#101114] p-4;
+  }
 }

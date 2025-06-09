@@ -13,6 +13,7 @@
     "format:fix": "prettier --write \"./src/**/*.{ts,tsx,css}\" --cache"
   },
   "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.14",
     "@reown/appkit": "^1.7.8",
     "@reown/appkit-adapter-wagmi": "^1.7.8",
     "@tailwindcss/vite": "^4.1.8",
@@ -51,6 +52,7 @@
     "rollup-plugin-visualizer": "^6.0.1",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.30.1",
-    "vite": "^6.3.5"
+    "vite": "^6.3.5",
+    "vite-plugin-svgr": "^4.3.0"
   }
 }
