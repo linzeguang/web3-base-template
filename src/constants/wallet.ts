@@ -1,7 +1,9 @@
-import { arbitrum, mainnet, sepolia, type AppKitNetwork } from '@reown/appkit/networks'
+import { arbitrum, mainnet, monadTestnet, sepolia, type AppKitNetwork } from '@reown/appkit/networks'
 import { WagmiAdapter } from '@reown/appkit-adapter-wagmi'
 
 import type { CreateAppKit } from '@reown/appkit/react'
+
+export const RPC_URL = import.meta.env.VITE_MONAD_RPC || monadTestnet.rpcUrls.default.http[0]
 
 // Get projectId from https://cloud.reown.com
 export const projectId = import.meta.env.VITE_PROJECT_ID // this is a public projectId only to use on localhost
