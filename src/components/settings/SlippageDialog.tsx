@@ -30,6 +30,9 @@ const SlippageDialog: React.FC = () => {
             </Button>
           )
         }}
+        content={{
+          className: 'w-[432px]'
+        }}
       >
         1111
       </Dialog>

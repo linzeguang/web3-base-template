@@ -2,6 +2,7 @@
 @import './components.css';
 
 @import 'tailwindcss';
+@plugin "tailwindcss-animate";
 
 @plugin 'daisyui' {
   theme: monad --default;
