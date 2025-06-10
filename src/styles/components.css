@@ -19,4 +19,13 @@
     @apply fixed top-1/2 left-1/2 z-[999] -translate-1/2;
     @apply border-base-300 rounded-md border bg-[#101114] p-4;
   }
+  .toggle {
+    --radius-selector: 9999px;
+  }
+  .btn {
+    --radius-field: 4px;
+  }
+  .btn-neutral {
+    --btn-color: var(--color-base-300);
+  }
 }

@@ -3,23 +3,23 @@ import React, { forwardRef, useImperativeHandle, useState } from 'react'
 import * as DialogPrimitive from '@radix-ui/react-dialog'
 
 import { Icon } from '@/components/svgr'
-import Button from '@/components/ui/Button'
+import { Button } from '@/components/ui/Button'
 import { cn } from '@/lib/utils'
 
-interface DialogMethods {
+export interface DialogMethods {
   isOpen: boolean
   open: () => void
   close: () => void
 }
 
-interface DialogProps extends React.ComponentProps<typeof DialogPrimitive.Root>, React.PropsWithChildren {
+export interface DialogProps extends React.ComponentProps<typeof DialogPrimitive.Root>, React.PropsWithChildren {
   closeable?: boolean
   title?: React.ReactNode
   trigger?: React.ComponentProps<typeof DialogPrimitive.Trigger>
   content?: React.ComponentProps<typeof DialogPrimitive.Content>
 }
 
-const Dialog = forwardRef<DialogMethods, DialogProps>(
+export const Dialog = forwardRef<DialogMethods, DialogProps>(
   ({ closeable = true, children, content, trigger, title, ...props }, methods) => {
     const [isOpen, setIsOpen] = useState(false)
 
@@ -59,7 +59,7 @@ const Dialog = forwardRef<DialogMethods, DialogProps>(
               content?.className
             )}
           >
-            <DialogPrimitive.Title className="pr-8 text-xl font-semibold">{title}</DialogPrimitive.Title>
+            <DialogPrimitive.Title className="pr-8 pb-4 text-xl font-semibold">{title}</DialogPrimitive.Title>
 
             {children}
 
@@ -76,5 +76,3 @@ const Dialog = forwardRef<DialogMethods, DialogProps>(
     )
   }
 )
-
-export default Dialog
