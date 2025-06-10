@@ -44,6 +44,8 @@ const SlippageDialog: React.FC = () => {
   })
   const slippage = form.watch('slippage')
 
+  const handleRest = useCallback(() => {}, [])
+
   const handleSubmit = useCallback((values: z.infer<typeof formSchema>) => {
     console.log('>>>>>> handleSubmit: values', values)
     dialogRef.current?.close()
@@ -102,7 +104,7 @@ const SlippageDialog: React.FC = () => {
               )}
             />
             <Grid className="mt-8 grid-cols-2 gap-2">
-              <Button type="button" variant="neutral" outline className="text-white">
+              <Button type="button" variant="neutral" outline className="text-white" onClick={handleRest}>
                 Reset
               </Button>
               <Button type="submit" variant="primary">
