@@ -1,7 +1,7 @@
-import { arbitrum, mainnet, monadTestnet, sepolia, type AppKitNetwork } from '@reown/appkit/networks'
+import { mainnet, monadTestnet, type AppKitNetwork } from '@reown/appkit/networks'
 import { WagmiAdapter } from '@reown/appkit-adapter-wagmi'
 
-import type { CreateAppKit } from '@reown/appkit/react'
+import type { AppKitOptions, CreateAppKit } from '@reown/appkit/react'
 
 export const RPC_URL = import.meta.env.VITE_MONAD_RPC || monadTestnet.rpcUrls.default.http[0]
 
@@ -19,13 +19,26 @@ export const metadata: CreateAppKit['metadata'] = {
   icons: ['https://avatars.githubusercontent.com/u/179229932']
 }
 
+export const features: AppKitOptions['features'] = {
+  analytics: true, // Optional - defaults to your Cloud configuration
+  email: false,
+  socials: false,
+  swaps: false,
+  send: false,
+  receive: false,
+  onramp: false
+}
+
 // for custom networks visit -> https://docs.reown.com/appkit/react/core/custom-networks
-export const networks = [mainnet, arbitrum, sepolia] as [AppKitNetwork, ...AppKitNetwork[]]
+export const networks = [{ ...monadTestnet, rpcUrls: { default: { http: [RPC_URL] } } }] as [
+  AppKitNetwork,
+  ...AppKitNetwork[]
+]
 
 //Set up the Wagmi Adapter (Config)
 export const wagmiAdapter = new WagmiAdapter({
   projectId,
-  networks
+  networks: [mainnet, ...networks]
 })
 
 export const wagmiConfig = wagmiAdapter.wagmiConfig

@@ -7,6 +7,8 @@ import App from './App.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <RootProvider>
-    <App />
+    <div className="h-[2000px]">
+      <App />
+    </div>
   </RootProvider>
 )

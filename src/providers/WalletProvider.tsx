@@ -4,7 +4,7 @@ import { createAppKit } from '@reown/appkit/react'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { WagmiProvider } from 'wagmi'
 
-import { metadata, networks, projectId, wagmiAdapter } from '@/constants/wallet'
+import { features, metadata, networks, projectId, wagmiAdapter } from '@/constants/wallet'
 
 const queryClient = new QueryClient()
 
@@ -14,9 +14,7 @@ createAppKit({
   projectId,
   networks,
   metadata,
-  features: {
-    analytics: true // Optional - defaults to your Cloud configuration
-  },
+  features,
   themeVariables: {
     '--w3m-accent': '#000000'
   }

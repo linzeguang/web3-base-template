@@ -98,7 +98,7 @@ const SlippageDialog: React.FC = () => {
                     onValueChange={field.onChange}
                   />
                   <FormControl>
-                    <Input className="w-full" size="md" inputProps={field} />
+                    <Input wrapperClassName="w-full" size="md" {...field} />
                   </FormControl>
                 </FormItem>
               )}

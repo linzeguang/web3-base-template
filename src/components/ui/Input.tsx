@@ -19,17 +19,19 @@ const inputVariants = cva(cn('input px-4'), {
   }
 })
 
-export interface InputProps extends React.LabelHTMLAttributes<HTMLLabelElement>, VariantProps<typeof inputVariants> {
-  inputProps?: React.InputHTMLAttributes<HTMLInputElement>
+export interface InputProps
+  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'>,
+    VariantProps<typeof inputVariants> {
   prefixNode?: React.ReactNode
   suffixNode?: React.ReactNode
+  wrapperClassName?: React.LabelHTMLAttributes<HTMLLabelElement>['className']
 }
 
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ inputProps, prefixNode, suffixNode, size, className, ...rest }, ref) => (
-    <label className={inputVariants({ className, size })} {...rest}>
+  ({ prefixNode, suffixNode, size, wrapperClassName, ...rest }, ref) => (
+    <label className={inputVariants({ className: wrapperClassName, size })}>
       {prefixNode}
-      <input ref={ref} {...inputProps} className={cn('grow', inputProps?.className)} />
+      <input {...rest} ref={ref} className={cn('grow', rest?.className)} />
       {suffixNode}
     </label>
   )

@@ -27,7 +27,8 @@ const buttonVariants = cva(cn('btn'), {
     }
   },
   defaultVariants: {
-    size: 'lg'
+    size: 'lg',
+    variant: 'neutral'
   }
 })
 
