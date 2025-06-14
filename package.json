@@ -14,9 +14,6 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^5.1.1",
-    "@radix-ui/react-dialog": "^1.1.14",
-    "@radix-ui/react-label": "^2.1.7",
-    "@radix-ui/react-slot": "^1.2.3",
     "@reown/appkit": "^1.7.8",
     "@reown/appkit-adapter-wagmi": "^1.7.8",
     "@tailwindcss/vite": "^4.1.8",
@@ -39,7 +36,6 @@
     "tailwindcss": "^4.1.8",
     "tailwindcss-animate": "^1.0.7",
     "viem": "^2.30.6",
-    "vite-plugin-cdn-import": "^1.0.1",
     "wagmi": "^2.15.6",
     "zod": "^3.25.57"
   },
@@ -49,7 +45,6 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@vitejs/plugin-react": "^4.4.1",
-    "daisyui": "^5.0.43",
     "eslint": "^9.25.0",
     "eslint-import-resolver-typescript": "^4.4.3",
     "eslint-plugin-import": "^2.31.0",
@@ -63,6 +58,7 @@
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.30.1",
     "vite": "^6.3.5",
+    "vite-plugin-cdn-import": "^1.0.1",
     "vite-plugin-svgr": "^4.3.0"
   }
 }

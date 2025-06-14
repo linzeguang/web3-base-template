@@ -1,54 +1,12 @@
 @import './fonts.css';
-@import './components.css';
 
 @import 'tailwindcss';
 @plugin "tailwindcss-animate";
 
-@plugin 'daisyui' {
-  theme: monad --default;
-}
-
-@plugin "daisyui/theme" {
-  name: 'monad';
-  default: true;
-  prefersdark: true;
-  color-scheme: 'dark';
-  --color-base-100: oklch(1 0 0 / 5%);
-  --color-base-200: oklch(0.174 0.0481 285.97);
-  --color-base-300: oklch(0.4091 0 0);
-  --color-base-content: oklch(100% 0 0);
-  --color-primary: oklch(0.6057 0.224 285.06);
-  --color-primary-content: oklch(100% 0 0);
-  --color-secondary: oklch(0.2114 0.0573 288.15);
-  --color-secondary-content: oklch(100% 0 0);
-  --color-accent: oklch(0.679 0.1918 295.66);
-  --color-accent-content: oklch(100% 0 0);
-  --color-neutral: oklch(0.2114 0.0573 288.15);
-  --color-neutral-content: oklch(98% 0 0);
-  --color-info: oklch(0.7507 0.1545 232.72);
-  --color-info-content: oklch(100% 0 0);
-  --color-success: oklch(0.7531 0.2442 143.57);
-  --color-success-content: oklch(100% 0 0);
-  --color-warning: oklch(0.9175 0.1478 97.35);
-  --color-warning-content: oklch(100% 0 0);
-  --color-error: oklch(0.6734 0.2049 29.6);
-  --color-error-content: oklch(100% 0 0);
-  --radius-selector: 2px;
-  --radius-field: 2px;
-  --radius-box: 4px;
-  --size-selector: 0.25rem;
-  --size-field: 0.25rem;
-  --border: 1px;
-  --depth: 0;
-  --noise: 1;
-}
-
 @layer base {
   :root {
-    --root-bg: var(--color-base-200);
-    --btn-color: var(--color-base-300);
-
+    background-color: #0f0c24;
     scrollbar-width: thin;
-    /* scrollbar-color: var(--color-primary) transparent !important; */
+    scrollbar-color: #7b61ff transparent;
   }
 }
